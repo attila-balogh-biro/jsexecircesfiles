@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>CookieBasicsDefinitionDemo</title>
+</head>
+<body>
+    <script>
+        
+       localStorage.setItem('username', JSON.stringify({
+           name: 'Attila'
+       }));
+
+       var userAsString = localStorage.getItem('username');
+       var user = JSON.parse(userAsString);
+       console.log(user);
+
+       var keyName = localStorage.key(0);
+
+       console.log(keyName);
+
+       localStorage.removeItem('username');
+
+       localStorage.clear();
+    
+    </script>
+</body>
+</html>

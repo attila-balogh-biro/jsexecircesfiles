@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>CookieBasicsDefinitionDemo</title>
+</head>
+<body>
+    <script>
+        
+        //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toUTCString
+        const cookieManager = {
+
+            setCookie(name, value, expirationDays = 365, path = '/'){
+                const now = new Date();
+                now.setTime(now.getTime() + expirationDays * 24 * 60 * 60 * 1000)
+                const expires = now.toUTCString();
+                document.cookie = name +'='+value+';expires='+expires+';path='+path;
+            },
+
+            getCookie(name){
+                console.log(document.cookie);
+                const keyValuePairs = document.cookie.split('; ')
+                .find(cookie => cookie.startsWith(name))
+                return keyValuePairs ? keyValuePairs.split('=')[1] : '';
+            },
+
+            checkCookie(name) {
+                const exists = getCookie(name);
+                return exists ? true : false;
+            },
+
+            deleteCookie(name){
+                document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 UTC;`;
+            }
+
+            
+        }
+
+        cookieManager.setCookie('name','Attila',365);
+        cookieManager.getCookie('name');
+    
+    </script>
+</body>
+</html>

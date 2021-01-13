@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>CookieBasicsDefinitionDemo</title>
+</head>
+<body onload="createCookie('Alma')">
+    <script>
+        function createCookie(name){
+            console.log('Create cookie function invoked...'+name);
+            // Fri, 14 Jan 2021 12:00:00 UTC+1; path=/CookieBasicsDefinitionDemo
+            //document.cookie = 'username='+name;
+            document.cookie = 'username='+name+'; expires=Fri, 14 Jan 2021 12:00:00 UTC+1';
+            var myDiv = document.createElement("div");
+            myDiv.id = 'dynamicdiv';
+            myDiv.innerHTML = 'Name is '+name;
+            document.getElementsByTagName('body')[0].appendChild(myDiv);
+        }   
+    </script>
+</body>
+</html>
