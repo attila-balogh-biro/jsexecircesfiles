@@ -26,19 +26,21 @@
             },
 
             checkCookie(name) {
-                const exists = getCookie(name);
+                const exists = this.getCookie(name);
                 return exists ? true : false;
             },
 
             deleteCookie(name){
-                document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 UTC;`;
+                document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/`;
             }
 
             
         }
 
-        cookieManager.setCookie('name','Attila',365);
-        cookieManager.getCookie('name');
+        cookieManager.setCookie('progmasters','Attila',365);
+        cookieManager.getCookie('progmasters');
+        cookieManager.deleteCookie('progmasters');
+        console.log(cookieManager.checkCookie('progmasters'));
     
     </script>
 </body>

@@ -11,7 +11,8 @@
             console.log('Create cookie function invoked...'+name);
             // Fri, 14 Jan 2021 12:00:00 UTC+1; path=/CookieBasicsDefinitionDemo
             //document.cookie = 'username='+name;
-            document.cookie = 'username='+name+'; expires=Fri, 14 Jan 2021 12:00:00 UTC+1';
+            // expires=Fri, 14 Jan 2021 12:00:00 UTC+1
+            document.cookie = 'username='+name;
             var myDiv = document.createElement("div");
             myDiv.id = 'dynamicdiv';
             myDiv.innerHTML = 'Name is '+name;

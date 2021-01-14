@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CookieBasicsFinalDemo2</title>
+</head>
+<body>
+    
+    <script>
+        
+        function createCookie(cookieName, cookieValue, expiration = 365, path){
+
+            var now = new Date();
+            now.setTime(now.getTime()+expiration * 24 * 60 * 60 * 1000);
+
+            var utcString = now.toUTCString();
+
+            document.cookie = cookieName + '=' + cookieValue + '; expires='+utcString
+            +'; path='+path;
+        }
+
+        function getCookie(cookieName){
+            console.log(document.cookie);
+                const keyValuePairs = document.cookie.split('; ')
+                .find(cookie => cookie.startsWith(name))
+                return keyValuePairs ? keyValuePairs.split('=')[1] : '';
+        }
+
+
+        function checkCookie(name){
+
+            var userName = getCookie(name);
+
+            if(userName != "") {
+                alert('Isten hozott '+userName+' !');
+            }
+            else {
+
+                var userName = prompt('Kérem adja meg a felhasználó nevét!');
+                var expirationDay = prompt('Kérem adja meg hány napig tároljuk a bejelentkezést?');
+
+                createCookie(userName,expirationDay, '/');
+            }
+
+        }
+
+
+        checkCookie('username');
+
+    </script>
+
+</body>
+</html>
