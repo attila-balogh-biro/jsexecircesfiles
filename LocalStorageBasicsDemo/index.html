@@ -7,22 +7,32 @@
 </head>
 <body>
     <script>
-        
-       localStorage.setItem('username', JSON.stringify({
+       
+       function isLocalStorageEnabled(){
+          return Modernizr.localStorage ? true : false;
+       }
+
+       if(isLocalStorageEnabled){
+
+        console.log('Storage enabled...');
+
+        localStorage.setItem('username', JSON.stringify({
            name: 'Attila'
-       }));
+        }));
 
-       var userAsString = localStorage.getItem('username');
-       var user = JSON.parse(userAsString);
-       console.log(user);
+        var userAsString = localStorage.getItem('username');
+        var user = JSON.parse(userAsString);
+        console.log(user);
 
-       var keyName = localStorage.key(0);
+        var keyName = localStorage.key(0);
 
-       console.log(keyName);
+        console.log(keyName);
 
-       localStorage.removeItem('username');
+        localStorage.removeItem('username');
 
-       localStorage.clear();
+        localStorage.clear();
+       }
+     
     
     </script>
 </body>

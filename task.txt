@@ -1,0 +1,7 @@
+Az alábbi cookie-k vannak a böngésződben tárolva (hozd létre őket):
+
+viewed: 5
+uid: 354774631237
+ssid: Bx55OWbHJ0Vt_IGIFÍ
+
+Írj egy olyan objectet, az alábbi három metódust megvalósítja: - kiolvassa a sütik nevét, és értékét - átmenti őket sessionStorage-be - törli a sütiket
